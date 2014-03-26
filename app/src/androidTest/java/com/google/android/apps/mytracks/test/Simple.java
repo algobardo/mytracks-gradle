@@ -14,11 +14,16 @@ import android.widget.Button;
 import android.widget.CheckedTextView;
 import android.widget.TextView;
 
-import static com.google.android.apps.common.testing.ui.espresso.Espresso.onView;
-import static com.google.android.apps.common.testing.ui.espresso.Espresso.onData;
-import static com.google.android.apps.common.testing.ui.espresso.Espresso.openActionBarOverflowOrOptionsMenu;
+import static com.google.android.apps.mytracks.test.MyEspresso.onView;
+import static com.google.android.apps.mytracks.test.MyEspresso.onData;
+import static com.google.android.apps.mytracks.test.MyEspresso.openActionBarOverflowOrOptionsMenu;
+import static com.google.android.apps.mytracks.test.MyEspresso.pressBack;
+import static com.google.android.apps.mytracks.test.MyEspresso.openActionBarOverflowOrOptionsMenu;
+import static com.google.android.apps.mytracks.test.MyEspresso.closeSoftKeyboard;
+
 import static com.google.android.apps.common.testing.ui.espresso.action.ViewActions.clearText;
 import static com.google.android.apps.common.testing.ui.espresso.action.ViewActions.click;
+import static com.google.android.apps.common.testing.ui.espresso.assertion.ViewAssertions.doesNotExist;
 import static com.google.android.apps.common.testing.ui.espresso.matcher.RootMatchers.withDecorView;
 import static com.google.android.apps.common.testing.ui.espresso.matcher.ViewMatchers.isClickable;
 import static com.google.android.apps.common.testing.ui.espresso.matcher.ViewMatchers.isDisplayed;
@@ -33,7 +38,7 @@ import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 import static org.hamcrest.core.IsAnything.anything;
 
-import com.google.android.apps.common.testing.ui.espresso.Espresso;
+
 import com.google.android.apps.common.testing.ui.espresso.UiController;
 import com.google.android.apps.common.testing.ui.espresso.action.ViewActions;
 import com.google.android.apps.common.testing.ui.espresso.assertion.ViewAssertions;
@@ -50,7 +55,16 @@ import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
 import org.hamcrest.TypeSafeMatcher;
 
+import java.io.PrintStream;
+import java.net.Socket;
+
+
+
 public class Simple extends ActivityInstrumentationTestCase2<TrackListActivity> {
+
+    private static final String ANDROID_LOCAL_IP = "10.0.2.2";
+    private static int EMULATOR_PORT = 5554;
+
 
     public Simple() {
         super(TrackListActivity.class);
@@ -61,20 +75,24 @@ public class Simple extends ActivityInstrumentationTestCase2<TrackListActivity> 
     {
         super.setUp();
         getActivity();
+        setupForAllTest();
     }
 
     public void testCreateTrack() {
 
+
         onView(withId(R.id.track_controller_record))
                 .perform(click())
                 .check(matches(isDisplayed()));
+
+        sendGps(3);
 
         onView(withId(R.id.track_controller_stop))
                 .perform(click());
 
         onView(withId(R.id.track_edit_name)).perform(ViewActions.typeText(String.valueOf(System.currentTimeMillis())));
 
-        Espresso.closeSoftKeyboard();
+        closeSoftKeyboard();
 
         onView(withText(R.string.generic_save))
                 .perform(click());
@@ -137,13 +155,13 @@ public class Simple extends ActivityInstrumentationTestCase2<TrackListActivity> 
 
         onView(withText(R.string.settings_reset)).check(matches(isDisplayed()));
 
-        Espresso.pressBack();//TODO: Without this, the application is not destroyed for the test end
+        pressBack();//TODO: Without this, the application is not destroyed for the test end
     }
 
     public void testMultipleTrack(){
         for(int i = 0; i < 10; i++) {
             testCreateTrack();
-            Espresso.pressBack();
+            pressBack();
         }
 
         onData(anything())
@@ -220,4 +238,64 @@ public class Simple extends ActivityInstrumentationTestCase2<TrackListActivity> 
             }
         };
     }
+
+    private static boolean isEmulator()
+    {
+        return android.os.Build.MODEL.equals("google_sdk");
+    }
+    private static void setupForAllTest() {
+
+        // Check if open MyTracks first time after install. If so, there would be a
+        // welcome view with accept buttons. And makes sure only check once.
+
+        try{
+            onView(withText(R.string.eula_accept))
+                    .check(doesNotExist());
+        }
+        catch(Error e){
+            onView(withText(R.string.eula_accept))
+                    .perform(click());
+        }
+
+        // Check the status of real phone. For emulator, we would fix GPS signal.
+//        if (!isEmulator()) {
+//            onView(withId(R.id.map_my_location))
+//                    .perform(click());
+//        }
+    }
+
+    private static void sendGps(int number) {
+        if (number < 1) {
+            return;
+        }
+
+        // If it's a real device, does not send simulated GPS signal.
+        if (!isEmulator()) {
+            return;
+        }
+
+        PrintStream out = null;
+        Socket socket = null;
+        try {
+            socket = new Socket(ANDROID_LOCAL_IP, EMULATOR_PORT);
+            out = new PrintStream(socket.getOutputStream());
+            double longitude = 10;
+            double latitude =  10;
+            for (int i = 0; i < number; i++) {
+                Log.v("GPS","geo fix " + longitude + " " + latitude);
+                longitude += 0.01;
+                latitude += 0.01;
+                Thread.sleep(100);
+            }
+
+        } catch (Exception e) {
+            System.exit(-1);
+        } finally {
+            if (out != null) {
+                out.close();
+            }
+        }
+    }
+
+
 }
