@@ -14,7 +14,7 @@
  * the License.
  */
 
-package com.google.android.apps.mytracks.endtoendtest.common;
+package com.google.android.apps.mytracks.endtoendtest;
 
 import com.google.android.apps.mytracks.TrackDetailActivity;
 import com.google.android.apps.mytracks.TrackListActivity;

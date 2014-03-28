@@ -1,6 +1,4 @@
-package com.google.android.apps.mytracks.endtoendtest.others;
-
-import com.google.android.apps.mytracks.endtoendtest.EndToEndTestUtils;
+package com.google.android.apps.mytracks.endtoendtest;
 
 import android.app.Activity;
 import android.app.ActivityManager;

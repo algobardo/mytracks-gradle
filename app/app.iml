@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/.." external.system.id="GRADLE" external.system.module.group="MyTracksGradle" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+<module external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/.." external.system.id="GRADLE" external.system.module.group="mytracks-gradle" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="android-gradle" name="Android-Gradle">
       <configuration>
@@ -108,6 +108,7 @@
     <orderEntry type="library" exported="" name="gdata-client-meta-1.0" level="project" />
     <orderEntry type="library" exported="" name="gson-2.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="guava-16.0" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="robotium-solo-5.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="hamcrest-integration-1.1" level="project" />
     <orderEntry type="library" exported="" name="gdata-core-1.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="jgrapht-jdk1.5-0.7.3" level="project" />

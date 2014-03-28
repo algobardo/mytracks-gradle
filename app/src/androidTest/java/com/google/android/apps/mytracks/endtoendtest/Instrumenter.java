@@ -39,12 +39,6 @@ public class Instrumenter extends Instrumentation {
   @Override
   public void onCreate(Bundle bundle) {
 
-    //Initialising Views recorder
-    
-    ViewTracer vt = new ViewTracer(this);
-    vtThread = new Thread(vt);
-    vtThread.start();
-    
     super.onCreate(bundle);
     Debug.startMethodTracing("MyTrackTrace",100*1024*1024);
     

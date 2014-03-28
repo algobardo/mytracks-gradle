@@ -13,12 +13,9 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.google.android.apps.mytracks.endtoendtest.sync;
+package com.google.android.apps.mytracks.endtoendtest;
 
 import com.google.android.apps.mytracks.TrackListActivity;
-import com.google.android.apps.mytracks.endtoendtest.EndToEndTestUtils;
-import com.google.android.apps.mytracks.endtoendtest.GoogleUtils;
-import com.google.android.apps.mytracks.endtoendtest.RunConfiguration;
 import com.google.android.apps.mytracks.io.sync.SyncUtils;
 import com.google.android.maps.mytracks.R;
 import com.google.api.services.drive.Drive;

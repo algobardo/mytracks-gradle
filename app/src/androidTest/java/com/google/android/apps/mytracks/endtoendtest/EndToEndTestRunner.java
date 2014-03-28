@@ -46,12 +46,6 @@ public class EndToEndTestRunner extends InstrumentationTestRunner {
   @Override
   public void onCreate(Bundle bundle) {
 
-    //Initialising Views recorder
-    
-    ViewTracer vt = new ViewTracer(this);
-    vtThread = new Thread(vt);
-    vtThread.start();
-    
     // Get the emulator port parameter for GPS signals
     String port = bundle.getString(PORT_KEY);
     if (port != null) {
