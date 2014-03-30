@@ -81,7 +81,9 @@ public class EndToEndTestUtils {
   private static final String MORE_OPTION_CLASSNAME = "com.android.internal.view.menu.ActionMenuPresenter$OverflowMenuButton";
   private static final String MENUITEM_CLASSNAME = "com.android.internal.view.menu.IconMenuItemView";
 
-  // Following is some check strings in English and Chinese
+  public static final int TRACE_SIZE = 200 * 1024 * 1024;
+
+    // Following is some check strings in English and Chinese
   private static final HashMap<String, String>
       RELATIVE_START_TIME_SUFFIX_MULTILINGUAL = new HashMap<String, String>();
 

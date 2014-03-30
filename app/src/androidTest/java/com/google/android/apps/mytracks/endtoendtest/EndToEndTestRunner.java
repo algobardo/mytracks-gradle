@@ -17,6 +17,7 @@
 package com.google.android.apps.mytracks.endtoendtest;
 
 import android.os.Bundle;
+import android.os.Debug;
 import android.test.InstrumentationTestRunner;
 import android.util.Log;
 
@@ -38,7 +39,6 @@ public class EndToEndTestRunner extends InstrumentationTestRunner {
   
   @Override
   public void onDestroy(){
-    //Debug.stopMethodTracing();
     super.onDestroy();
     
   }
@@ -70,7 +70,6 @@ public class EndToEndTestRunner extends InstrumentationTestRunner {
     Log.d(TAG, "Run stress test: " + runConfiguration.getRunStressTest());
 
     super.onCreate(bundle);
-    //Debug.startMethodTracing("MyTrackTrace",100*1024*1024);
-    
+
   }
 }

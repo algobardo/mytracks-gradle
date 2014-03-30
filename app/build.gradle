@@ -9,7 +9,7 @@ android {
         targetSdkVersion 17
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "com.google.android.apps.mytracks.test.OurRunner"
+        testInstrumentationRunner "com.google.android.apps.mytracks.endtoendtest.EndToEndTestRunner"
     }
     buildTypes {
         release {

@@ -21,6 +21,7 @@ import com.google.android.apps.mytracks.endtoendtest.EndToEndTestUtils;
 import com.google.android.maps.mytracks.R;
 
 import android.app.Instrumentation;
+import android.os.Debug;
 import android.test.ActivityInstrumentationTestCase2;
 import android.widget.ListView;
 
@@ -41,6 +42,7 @@ public class CreateTrackTest extends ActivityInstrumentationTestCase2<TrackListA
   @Override
   protected void setUp() throws Exception {
     super.setUp();
+    Debug.startMethodTracing("MyTrackTrace.trace",EndToEndTestUtils.TRACE_SIZE);
     instrumentation = getInstrumentation();
     trackListActivity = getActivity();
     EndToEndTestUtils.setupForAllTest(instrumentation, trackListActivity);
@@ -51,6 +53,7 @@ public class CreateTrackTest extends ActivityInstrumentationTestCase2<TrackListA
   @Override
   protected void tearDown() throws Exception {
     EndToEndTestUtils.SOLO.finishOpenedActivities();
+    Debug.stopMethodTracing();
     super.tearDown();
   }
 
