@@ -29,7 +29,8 @@ dependencies {
     compile project(':mytrackslib')
     compile 'com.google.android.gms:play-services:3.1.36'
     androidTestCompile 'jgrapht:jgrapht:0.7.3'
-    androidTestCompile project(':robotium')
+    compile project(':robotium')
+    //androidTestCompile('com.jayway.android.robotium:robotium-solo:5.1')
     androidTestCompile('com.jakewharton.espresso:espresso:1.1-r2'){
         //exclude group: 'com.squareup.dagger'
     }
