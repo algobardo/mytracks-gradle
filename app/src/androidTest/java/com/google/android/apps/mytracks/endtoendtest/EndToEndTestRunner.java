@@ -35,8 +35,6 @@ public class EndToEndTestRunner extends InstrumentationTestRunner {
   private static final String STRESS_KEY = "stress";
   private static final String TRUE_VALUE = "true";
 
-  private Thread vtThread = null;
-  
   @Override
   public void onDestroy(){
     super.onDestroy();

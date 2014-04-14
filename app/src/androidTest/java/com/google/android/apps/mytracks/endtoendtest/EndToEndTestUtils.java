@@ -52,12 +52,22 @@ import junit.framework.Assert;
  */
 public class EndToEndTestUtils {
 
+  
   public static final int TINY_WAIT_TIME = 200;
   public static final int VERY_SHORT_WAIT_TIME = 500;
   public static final int SHORT_WAIT_TIME = 2000;
   public static final int NORMAL_WAIT_TIME = 8000;
   public static final int LONG_WAIT_TIME = 15000;
   public static final int SUPER_LONG_WAIT_TIME = 100000;
+  
+  /* Modified timeouts
+  public static final int TINY_WAIT_TIME = 100;
+  public static final int VERY_SHORT_WAIT_TIME = 200;
+  public static final int SHORT_WAIT_TIME = 1000;
+  public static final int NORMAL_WAIT_TIME = 3000;
+  public static final int LONG_WAIT_TIME = 10000;
+  public static final int SUPER_LONG_WAIT_TIME = 30000;
+  */
   
   // Pause 200ms between each send.
   public static final double START_LONGITUDE = 51;
