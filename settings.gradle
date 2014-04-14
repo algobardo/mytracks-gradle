@@ -1,1 +1,1 @@
-include ':app', ':mytrackslib'
+include ':app', ':mytrackslib', ':robotium'
