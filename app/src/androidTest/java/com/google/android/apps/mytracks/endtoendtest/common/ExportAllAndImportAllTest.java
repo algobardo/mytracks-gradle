@@ -14,10 +14,11 @@
  * the License.
  */
 
-package com.google.android.apps.mytracks.endtoendtest;
+package com.google.android.apps.mytracks.endtoendtest.common;
 
 import com.google.android.apps.mytracks.TrackDetailActivity;
 import com.google.android.apps.mytracks.TrackListActivity;
+import com.google.android.apps.mytracks.endtoendtest.EndToEndTestUtils;
 import com.google.android.apps.mytracks.io.file.TrackFileFormat;
 import com.google.android.apps.mytracks.util.FileUtils;
 import com.google.android.apps.mytracks.util.UnitConversions;

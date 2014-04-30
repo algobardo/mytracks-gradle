@@ -14,7 +14,7 @@
  * the License.
  */
 
-package com.google.android.apps.mytracks.endtoendtest;
+package com.google.android.apps.mytracks.endtoendtest.common;
 
 import com.google.android.apps.mytracks.TrackListActivity;
 import com.google.android.apps.mytracks.endtoendtest.EndToEndTestUtils;
@@ -42,7 +42,10 @@ public class CreateTrackTest extends ActivityInstrumentationTestCase2<TrackListA
   @Override
   protected void setUp() throws Exception {
     super.setUp();
+    /*
+    Tracing
     Debug.startMethodTracing("MyTrackTrace.trace",EndToEndTestUtils.TRACE_SIZE);
+    */
     instrumentation = getInstrumentation();
     trackListActivity = getActivity();
     EndToEndTestUtils.setupForAllTest(instrumentation, trackListActivity);

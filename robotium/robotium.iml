@@ -3,7 +3,7 @@
   <component name="FacetManager">
     <facet type="android-gradle" name="Android-Gradle">
       <configuration>
-        <option name="GRADLE_PROJECT_PATH" value=":app" />
+        <option name="GRADLE_PROJECT_PATH" value=":robotium" />
       </configuration>
     </facet>
     <facet type="android" name="Android">
@@ -18,6 +18,7 @@
         <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
         <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/src/main/res" />
         <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
+        <option name="LIBRARY_PROJECT" value="true" />
       </configuration>
     </facet>
   </component>
@@ -68,50 +69,10 @@
       <excludeFolder url="file://$MODULE_DIR$/build/symbols" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
-    <orderEntry type="jdk" jdkName="Android API 17 Platform" jdkType="Android SDK" />
+    <orderEntry type="jdk" jdkName="Android API 19 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="antlib" level="project" />
-    <orderEntry type="library" exported="" name="google-http-client-gson-1.12.0-beta" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="dagger-1.2.1" level="project" />
-    <orderEntry type="library" exported="" name="jsr305" level="project" />
-    <orderEntry type="library" exported="" name="play-services-3.1.36" level="project" />
-    <orderEntry type="library" exported="" name="google-api-services-fusiontables-v1-rev16-1.12.0-beta" level="project" />
-    <orderEntry type="library" exported="" name="google-http-client-android-1.12.0-beta" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="javax.annotation-api-1.2" level="project" />
-    <orderEntry type="library" exported="" name="google-common" level="project" />
-    <orderEntry type="library" exported="" name="google-api-client-android-1.12.0-beta" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="hamcrest-library-1.1" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="espresso-1.1-r2" level="project" />
-    <orderEntry type="library" exported="" name="guava-jdk5-13.0" level="project" />
-    <orderEntry type="library" exported="" name="gdata-spreadsheet-3.0" level="project" />
-    <orderEntry type="library" exported="" name="google-http-client-jackson-1.12.0-beta" level="project" />
-    <orderEntry type="library" exported="" name="libGoogleAnalytics" level="project" />
-    <orderEntry type="library" exported="" name="jackson-core-asl-1.9.9" level="project" />
-    <orderEntry type="library" exported="" name="gdata-client-1.0" level="project" />
-    <orderEntry type="library" exported="" name="google-http-client-1.12.0-beta" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="jsr305-1.3.9" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-19.0.1" level="project" />
-    <orderEntry type="library" exported="" name="google-api-client-1.12.0-beta" level="project" />
-    <orderEntry type="library" exported="" name="protobuf-java-2.3.0-lite" level="project" />
-    <orderEntry type="library" exported="" name="google-http-client-jackson2-1.12.0-beta" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="espresso-runner-1.1-r2" level="project" />
-    <orderEntry type="library" exported="" name="google-oauth-client-1.12.0-beta" level="project" />
     <orderEntry type="library" exported="" name="support-v4-19.0.1" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="hamcrest-core-1.1" level="project" />
-    <orderEntry type="library" exported="" name="AndroidMockGenerator" level="project" />
-    <orderEntry type="library" exported="" name="gdata-spreadsheet-meta-3.0" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="espresso-runner-runtime-1.1-r2" level="project" />
-    <orderEntry type="library" exported="" name="jackson-core-2.0.5" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="javax.inject-1" level="project" />
-    <orderEntry type="library" exported="" name="google-api-services-drive-v2-rev30-1.12.0-beta" level="project" />
-    <orderEntry type="library" exported="" name="gdata-client-meta-1.0" level="project" />
-    <orderEntry type="library" exported="" name="gson-2.1" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="guava-16.0" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="hamcrest-integration-1.1" level="project" />
-    <orderEntry type="library" exported="" name="gdata-core-1.0" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="jgrapht-jdk1.5-0.7.3" level="project" />
-    <orderEntry type="module" module-name="mytrackslib" exported="" />
-    <orderEntry type="module" module-name="robotium" exported="" />
   </component>
 </module>
 

@@ -1,4 +1,4 @@
-package com.google.android.apps.mytracks.endtoendtest;
+package com.google.android.apps.mytracks.endtoendtest.others;
 
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -10,6 +10,8 @@ import android.os.Environment;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager.LayoutParams;
+
+import com.google.android.apps.mytracks.endtoendtest.EndToEndTestUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;
